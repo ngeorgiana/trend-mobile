@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Index
+      About
     </h1>
   </div>
 </template>
@@ -10,10 +10,10 @@
 export default {
   head () {
     return {
-      title: 'Pagina de index',
+      title: 'Pagina despre brand',
       meta: [
         { name: 'description', content: 'Descriere' },
-        { name: 'keywords', content: 'cluj, companie, index' }
+        { name: 'keywords', content: 'cluj, companie, despre brand' }
       ]
     }
   }

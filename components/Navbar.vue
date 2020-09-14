@@ -1,23 +1,63 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">
-        NavBar
-      </b-navbar-brand>
+    <b-navbar toggleable="lg" type="light" variant="light">
       <b-navbar-toggle target="nav-collapse" />
+
+      <nuxt-link to="/">
+        <b-navbar-item>
+          <img id="brand" src="~/assets/logofont.png">
+        </b-navbar-item>
+      </nuxt-link>
+      <b-navbar-item>
+        <div>
+          <img
+            v-b-toggle.sidebar-right
+            class="svg-opacity"
+            src="~/assets/cart.svg"
+          >
+
+          <b-sidebar
+            id="sidebar-right"
+            title="Sidebar"
+            right
+            shadow
+            lazy="true"
+          >
+            <div class="px-3 py-2">
+              <p>
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+              </p>
+            </div>
+          </b-sidebar>
+        </div>
+      </b-navbar-item>
+
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">
-            Link
-          </b-nav-item>
+          <nuxt-link to="produse">
+            <b-navbar-item>
+              PRODUSE
+            </b-navbar-item>
+          </nuxt-link>
+          <nuxt-link to="about">
+            <b-navbar-item>
+              DESPRE NOI
+            </b-navbar-item>
+          </nuxt-link>
+          <nuxt-link to="discount">
+            <b-navbar-item>
+              LICHIDARE DE STOC
+            </b-navbar-item>
+          </nuxt-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search" />
+            <b-form-input size="sm" class="mr-sm-2" placeholder="Cauta" />
             <b-button size="sm" class="my-2 my-sm-0" type="submit">
-              Search
+              Cauta Produse
             </b-button>
           </b-nav-form>
 
@@ -41,5 +81,28 @@
 
 <script>
 export default {
+  data () {
+    return {
+      visible: false
+    }
+  }
 }
 </script>
+<style>
+
+#brand {
+  width: 60px;
+}
+
+.svg-opacity {
+  width: 30px;
+  margin: 4px 12px;
+  opacity: 0.6;
+}
+
+.navbar-light .navbar-toggler {
+  color: transparent;
+  border-color: transparent;
+}
+
+</style>

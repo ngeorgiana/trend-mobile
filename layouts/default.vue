@@ -1,8 +1,18 @@
 <template>
   <div>
+    <Nav />
     <Nuxt />
   </div>
 </template>
+
+<script>
+import Nav from './partials/nav'
+export default {
+  components: {
+    Nav
+  }
+}
+</script>
 
 <style>
 html {
@@ -23,12 +33,4 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 </style>
