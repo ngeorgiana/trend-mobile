@@ -7,3 +7,6 @@
 button:focus, img:focus {
   outline: transparent;
 }
+li{
+  list-style: none;
+}

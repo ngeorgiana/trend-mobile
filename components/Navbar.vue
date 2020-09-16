@@ -4,51 +4,40 @@
       <b-navbar-toggle target="nav-collapse" />
 
       <nuxt-link to="/">
-        <b-navbar-item>
-          <img id="brand" src="~/assets/logofont.png">
-        </b-navbar-item>
+        <img id="brand" src="~/assets/logofont.png">
       </nuxt-link>
-      <b-navbar-item>
-        <div>
-          <img
-            v-b-toggle.sidebar-right
-            class="svg-opacity"
-            src="~/assets/cart.svg"
-          >
-
-          <b-sidebar
-            id="sidebar-right"
-            title="Sidebar"
-            right
-            shadow
-            lazy="true"
-          >
-            <div class="px-3 py-2">
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-              </p>
-            </div>
-          </b-sidebar>
-        </div>
-      </b-navbar-item>
+      <div>
+        <img
+          v-b-toggle.sidebar-right
+          class="svg-opacity"
+          src="~/assets/cart.svg"
+        >
+        <b-sidebar
+          id="sidebar-right"
+          title="Sidebar"
+          right
+          shadow
+          lazy
+        >
+          <div class="px-3 py-2">
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+              in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            </p>
+          </div>
+        </b-sidebar>
+      </div>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <nuxt-link to="produse">
-            <b-navbar-item>
-              PRODUSE
-            </b-navbar-item>
+            PRODUSE
           </nuxt-link>
           <nuxt-link to="about">
-            <b-navbar-item>
-              DESPRE NOI
-            </b-navbar-item>
+            DESPRE NOI
           </nuxt-link>
           <nuxt-link to="discount">
-            <b-navbar-item>
-              LICHIDARE DE STOC
-            </b-navbar-item>
+            LICHIDARE DE STOC
           </nuxt-link>
         </b-navbar-nav>
 
@@ -103,6 +92,11 @@ export default {
 .navbar-light .navbar-toggler {
   color: transparent;
   border-color: transparent;
+}
+
+a {
+  padding: 0.5rem 0;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 </style>
