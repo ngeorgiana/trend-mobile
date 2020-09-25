@@ -12,7 +12,8 @@ export default {
     return {
       title: 'Pagina despre brand',
       meta: [
-        { name: 'description', content: 'Descriere' },
+        { hid: 'description' },
+        { name: 'description', content: 'Descriere site' },
         { name: 'keywords', content: 'cluj, companie, despre brand' }
       ]
     }
