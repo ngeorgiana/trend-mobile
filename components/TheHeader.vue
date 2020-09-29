@@ -30,7 +30,7 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <nuxt-link to="produse">
+          <nuxt-link to="category">
             PRODUSE
           </nuxt-link>
           <nuxt-link to="about">
