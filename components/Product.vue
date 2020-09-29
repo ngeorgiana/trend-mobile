@@ -1,5 +1,7 @@
 <template>
-  <p>{{ $route.params.id }}</p>
+  <div>
+    <p>This is the product page</p>
+  </div>
 </template>
 
 <script>

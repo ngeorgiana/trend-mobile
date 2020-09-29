@@ -33,6 +33,12 @@
           <nuxt-link to="category">
             PRODUSE
           </nuxt-link>
+          <nuxt-link to="category/brand">
+            BRANDURI
+          </nuxt-link>
+          <nuxt-link to="category/brand/model">
+            MODELE
+          </nuxt-link>
           <nuxt-link to="about">
             DESPRE NOI
           </nuxt-link>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nuxt-link to="/category/brand">
-      <b-card img-src="~/assets/category.jpg" img-alt="Card image" img-top>
-        <b-card-text class="category-name">
+    <nuxt-link to="/category/brand/model/product">
+      <b-card img-src="~/assets/model.jpeg" img-alt="Card image" img-top>
+        <b-card-text class="brand-name">
           {{ title }}
         </b-card-text>
       </b-card>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'Category',
+  name: 'Model',
   props: {
     title: {
       type: String,
