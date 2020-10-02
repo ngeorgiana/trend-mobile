@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link to="/category/brand/model">
+    <nuxt-link to="/model">
       <b-card img-src="~/assets/apple.png" img-alt="Card image" img-top>
         <b-card-text class="brand-name">
           {{ title }}

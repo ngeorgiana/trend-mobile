@@ -79,4 +79,13 @@ export default {
   */
   build: {
   }
+  // ** Define the routes
+  // generate: {
+  //   routes: [
+  //     'category/brand',
+  //     'category/brand/model',
+  //     'category/brand/model',
+  //     'category/brand/model/product'
+  //   ]
+  // }
 }

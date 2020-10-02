@@ -31,6 +31,16 @@ export default {
       // eslint-disable-next-line no-console
       console.error('Eroare')
     }
+  },
+  head () {
+    return {
+      title: 'Pagina de modele',
+      meta: [
+        { hid: 'description' },
+        { name: 'description', content: 'Modele' },
+        { name: 'keywords', content: 'cluj, companie, despre brand' }
+      ]
+    }
   }
 }
 </script>
