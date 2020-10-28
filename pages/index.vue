@@ -2,10 +2,12 @@
   <div>
     <Banner />
     <Category />
+    <Brand />
   </div>
 </template>
 
 <script>
+
 export default {
   head () {
     return {
