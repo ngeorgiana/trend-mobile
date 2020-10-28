@@ -30,19 +30,19 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <nuxt-link to="/category">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="/category">
             PRODUSE
           </nuxt-link>
-          <nuxt-link to="/category/brand">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="/category/brand">
             BRANDURI
           </nuxt-link>
-          <nuxt-link to="/category/brand/model">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="/category/brand/model">
             MODELE
           </nuxt-link>
-          <nuxt-link to="about">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="about">
             DESPRE NOI
           </nuxt-link>
-          <nuxt-link to="discount">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="discount">
             LICHIDARE DE STOC
           </nuxt-link>
         </b-navbar-nav>
@@ -55,7 +55,7 @@
               Cauta Produse
             </b-button>
           </b-nav-form>
-          <nuxt-link to="logon">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="logon">
             INITIERE SESIUNE
           </nuxt-link>
         </b-navbar-nav>
