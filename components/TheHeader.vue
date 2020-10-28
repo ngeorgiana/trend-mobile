@@ -55,19 +55,9 @@
               Cauta Produse
             </b-button>
           </b-nav-form>
-
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template v-slot:button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">
-              Profile
-            </b-dropdown-item>
-            <b-dropdown-item href="#">
-              Sign Out
-            </b-dropdown-item>
-          </b-nav-item-dropdown>
+          <nuxt-link to="logon">
+            INITIERE SESIUNE
+          </nuxt-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
