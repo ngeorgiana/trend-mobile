@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link to="/product">
+    <nuxt-link to="">
       <b-card img-src="~/assets/model.jpeg" img-alt="Card image" img-top>
         <b-card-text class="brand-name">
           {{ title }}
