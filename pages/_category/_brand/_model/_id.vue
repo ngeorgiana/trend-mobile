@@ -1,9 +1,11 @@
 <template>
-  <Product />
+  <div>
+    <Product />
+  </div>
 </template>
 
 <script>
-import Product from '../../../../../components/Product'
+import Product from '../../../../components/Product'
 export default {
   components: {
     Product
