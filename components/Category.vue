@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-link to="">
-      <b-card img-src="~/assets/category.jpg" img-alt="Card image" img-top>
+      <b-card img-src="~/static/category.jpg" img-alt="Card image" img-top>
         <b-card-text class="category-name">
           {{ title }}
         </b-card-text>

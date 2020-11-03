@@ -4,13 +4,13 @@
       <b-navbar-toggle target="nav-collapse" />
 
       <nuxt-link to="/">
-        <img id="brand" src="~/assets/logofont.png">
+        <img id="brand" src="~/static/logofont.png">
       </nuxt-link>
       <div>
         <img
           v-b-toggle.sidebar-right
           class="svg-opacity"
-          src="~/assets/cart.svg"
+          src="~/static/cart.svg"
         >
         <b-sidebar
           id="sidebar-right"
@@ -55,9 +55,14 @@
               Cauta Produse
             </b-button>
           </b-nav-form>
-          <nuxt-link v-b-toggle.nav-collapse.hidden to="logon">
-            INITIERE SESIUNE
-          </nuxt-link>
+          <div v-if="$auth.loggedIn">
+            {{ $auth.user.email }}
+          </div>
+          <div v-else>
+            <nuxt-link v-b-toggle.nav-collapse.hidden to="logon">
+              INITIERE SESIUNE
+            </nuxt-link>
+          </div>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

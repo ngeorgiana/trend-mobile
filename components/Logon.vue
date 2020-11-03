@@ -1,21 +1,21 @@
 <template>
   <div>
     <h1>Autentificare</h1>
-    <b-form @submit="onSubmit">
+    <b-form @submit="userLogin">
       <b-form-group
         id="input-group-1"
         label-for="input-1"
       >
         <b-form-input
           id="input-1"
-          v-model="form.email"
+          v-model="login.email"
           type="email"
           required
           placeholder="Enter email"
         />
         <b-form-input
           id="input-2"
-          v-model="form.password"
+          v-model="login.password"
           type="password"
           required
           placeholder="password"
@@ -43,16 +43,22 @@
 export default {
   data () {
     return {
-      form: {
+      login: {
         email: '',
         password: ''
       }
     }
   },
   methods: {
-    onSubmit (evt) {
-      evt.preventDefault()
-      alert(JSON.stringify(this.form))
+    async userLogin () {
+      try {
+        const response = await this.$auth.loginWith('local', { data: this.login })
+        // eslint-disable-next-line no-console
+        console.log(response)
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.log(err)
+      }
     }
   }
 }

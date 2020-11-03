@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-img src="~/assets/brand-image2.jpg" fluid alt="Responsive image" />
+    <b-img src="~/static/brand-image2.jpg" fluid alt="Responsive image" />
     <span class="d-flex justify-content-center banner">
       TRANSPORT GRATUIT LA COMENZI MAI MARI DE 50 LEI
     </span>
