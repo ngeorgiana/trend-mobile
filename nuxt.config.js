@@ -1,11 +1,6 @@
 
 export default {
   /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
-  mode: 'universal',
-  /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
@@ -22,7 +17,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/logofont.png' }
     ]
   },
   /*
@@ -59,6 +54,7 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content'
@@ -67,7 +63,8 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+  },
   /*
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration
@@ -79,13 +76,4 @@ export default {
   */
   build: {
   }
-  // ** Define the routes
-  // generate: {
-  //   routes: [
-  //     'category/brand',
-  //     'category/brand/model',
-  //     'category/brand/model',
-  //     'category/brand/model/product'
-  //   ]
-  // }
 }
