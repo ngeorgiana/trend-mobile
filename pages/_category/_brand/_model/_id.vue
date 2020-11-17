@@ -1,18 +1,30 @@
 <template>
   <div>
-    <Product />
+    <Product
+      :product="product"
+    />
   </div>
 </template>
 
 <script>
-import Product from '../../../../components/Product'
 export default {
-  components: {
-    Product
+  async fetch ({ $axios, params, store }) {
+    try {
+      const res = await $axios.get(`https://jsonplaceholder.typicode.com/todos/${params.id}`)
+      const product = res.data
+      store.commit('SET_CURRENT_PRODUCT', product)
+    } catch (error) {
+      alert(error)
+    }
+  },
+  computed: {
+    product () {
+      return this.$store.state.currentProduct
+    }
   },
   head () {
     return {
-      title: 'Pagina de produse',
+      title: 'produs',
       meta: [
         { hid: 'description' },
         { name: 'description', content: 'Produse' },
@@ -21,4 +33,5 @@ export default {
     }
   }
 }
+
 </script>

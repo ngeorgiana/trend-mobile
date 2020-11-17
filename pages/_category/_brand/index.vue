@@ -1,37 +1,52 @@
 <template>
   <div>
-    <Brand
-      v-for="alldata in alldatas"
-      :key="alldata.id"
-      :title="alldata.title"
-    />
+    <nuxt-link :to="`/category/brand/model`">
+      <ListItems
+        v-for="product in $store.state.products"
+        :key="product.id"
+        :title="product.title"
+      />
+    </nuxt-link>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import Brand from '../../../components/Brand'
+import ListItems from '../../../components/ListItems'
 
 export default {
   components: {
-    Brand
+    ListItems
   },
-  data () {
-    return {
-      alldatas: []
-    }
-  },
-  async created () {
+  async fetch ({ $axios, store }) {
     try {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/todos')
-
-      this.alldatas = res.data
-      // console.log(res.data)
+      const res = await $axios.get('https://jsonplaceholder.typicode.com/todos')
+      const products = res.data
+      store.commit('SET_PRODUCTS', products)
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error('Eroare')
+      alert(error)
     }
   },
+  // data () {
+  //   return {
+  //     alldatas: []
+  //   }
+  // },
+  // async created () {
+  //   try {
+  //     const res = await axios.get('https://jsonplaceholder.typicode.com/todos')
+
+  //     this.alldatas = res.data
+  //     // console.log(res.data)
+  //   } catch (error) {
+  //     // eslint-disable-next-line no-console
+  //     console.error('Eroare')
+  //   }
+  // },
+  // data () {
+  //   return {
+  //     alldatas: []
+  //   }
+  // },
   head () {
     return {
       title: 'Pagina de branduri ale produselor',

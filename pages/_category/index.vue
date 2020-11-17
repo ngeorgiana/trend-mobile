@@ -1,37 +1,36 @@
 <template>
   <div>
-    <Category
-      v-for="alldata in alldatas"
-      :key="alldata.id"
-      :title="alldata.title"
-    />
+    <nuxt-link :to="`/category/brand`">
+      <ListItems
+        v-for="product in $store.state.products"
+        :key="product.id"
+        :title="product.title"
+      />
+    </nuxt-link>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import Category from '../../components/Category'
+import ListItems from '../../components/ListItems'
 
 export default {
   components: {
-    Category
+    ListItems
   },
-  data () {
-    return {
-      alldatas: []
-    }
-  },
-  async created () {
+  async fetch ({ $axios, store }) {
     try {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/todos')
-
-      this.alldatas = res.data
-      // console.log(res.data)
+      const res = await $axios.get('https://jsonplaceholder.typicode.com/todos')
+      const products = res.data
+      store.commit('SET_PRODUCTS', products)
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error('Eroare')
+      alert(error)
     }
   },
+  // data () {
+  //   return {
+  //     products: []
+  //   }
+  // },
   head () {
     return {
       title: 'Pagina de category',
