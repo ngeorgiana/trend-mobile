@@ -39,10 +39,10 @@
           <nuxt-link v-b-toggle.nav-collapse.hidden to="/category/brand/model">
             MODELE
           </nuxt-link>
-          <nuxt-link v-b-toggle.nav-collapse.hidden to="about">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="/about">
             DESPRE NOI
           </nuxt-link>
-          <nuxt-link v-b-toggle.nav-collapse.hidden to="discount">
+          <nuxt-link v-b-toggle.nav-collapse.hidden to="/discount">
             LICHIDARE DE STOC
           </nuxt-link>
         </b-navbar-nav>
@@ -59,7 +59,7 @@
             {{ $auth.user.email }}
           </div>
           <div v-else>
-            <nuxt-link v-b-toggle.nav-collapse.hidden to="logon">
+            <nuxt-link v-b-toggle.nav-collapse.hidden to="/logon">
               INITIERE SESIUNE
             </nuxt-link>
           </div>
