@@ -24,7 +24,8 @@ export default {
   },
   head () {
     return {
-      title: 'produs',
+      title: '',
+      titleTemplate: `${this.product.title} - Produs`,
       meta: [
         { hid: 'description' },
         { name: 'description', content: 'Produse' },
