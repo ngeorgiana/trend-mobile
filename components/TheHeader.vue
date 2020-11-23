@@ -3,7 +3,7 @@
     <b-navbar toggleable="lg" type="light" variant="light">
       <b-navbar-toggle target="nav-collapse" />
 
-      <nuxt-link to="/">
+      <nuxt-link nav-collapse.hidden to="/">
         <img id="brand" src="~/static/logofont.png">
       </nuxt-link>
       <div>
@@ -46,8 +46,6 @@
             LICHIDARE DE STOC
           </nuxt-link>
         </b-navbar-nav>
-
-        <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
             <b-form-input size="sm" class="mr-sm-2" placeholder="Cauta" />
@@ -68,7 +66,6 @@
     </b-navbar>
   </div>
 </template>
-
 <script>
 export default {
   name: 'TheHeader',

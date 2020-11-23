@@ -3,7 +3,7 @@
     <b-container>
       <b-row>
         <b-col>
-          <b-card img-src="apple.png" img-alt="Card image" img-top>
+          <b-card img-src="~/static/apple.png" img-alt="Card image" img-top>
             <b-card-text class="brand-name">
               {{ title }}
             </b-card-text>
