@@ -1,7 +1,7 @@
 <template>
   <div>
     <ListItem
-      v-for="product in product"
+      v-for="product in products"
       :id="product.id"
       :key="product.id"
       :title="product.title"
@@ -17,20 +17,11 @@ export default {
   components: {
     ListItem
   },
-
-  async fetch ({ $axios, store }) {
-    try {
-      const res = await $axios.get('https://jsonplaceholder.typicode.com/todos')
-      const products = res.data
-      store.commit('SET_PRODUCTS', products)
-    } catch (error) {
-      alert(error)
-    }
+  async fetch ({ store }) {
+    await store.dispatch('loadProducts')
   },
   computed: {
-    ...mapState({
-      product: 'products'
-    })
+    ...mapState(['products'])
   },
   head () {
     return {

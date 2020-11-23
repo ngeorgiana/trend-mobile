@@ -2,7 +2,7 @@
   <div>
     <nuxt-link :to="`/category/brand`">
       <ListItems
-        v-for="product in $store.state.products"
+        v-for="product in products"
         :key="product.id"
         :title="product.title"
       />
@@ -11,26 +11,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import ListItems from '../../components/ListItems'
 
 export default {
   components: {
     ListItems
   },
-  async fetch ({ $axios, store }) {
-    try {
-      const res = await $axios.get('https://jsonplaceholder.typicode.com/todos')
-      const products = res.data
-      store.commit('SET_PRODUCTS', products)
-    } catch (error) {
-      alert(error)
-    }
+  async fetch ({ store }) {
+    await store.dispatch('loadProducts')
   },
-  // data () {
-  //   return {
-  //     products: []
-  //   }
-  // },
+  computed: {
+    ...mapState(['products'])
+  },
   head () {
     return {
       title: 'Pagina de category',

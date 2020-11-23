@@ -1,31 +1,32 @@
 <template>
   <div>
     <Product
-      :product="product"
+      :product="products"
     />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import Product from '../../../../components/Product'
+
 export default {
-  async fetch ({ $axios, params, store }) {
-    try {
-      const res = await $axios.get(`https://jsonplaceholder.typicode.com/todos/${params.id}`)
-      const product = res.data
-      store.commit('SET_CURRENT_PRODUCT', product)
-    } catch (error) {
-      alert(error)
-    }
+  components: {
+    Product
+  },
+  async fetch ({ store, params }) {
+    await store.dispatch('loadOneProduct', { productId: params.id })
   },
   computed: {
+    ...mapState(['products']),
     product () {
-      return this.$store.state.currentProduct
+      return this.products.find(i => i.id === this.$route.params.id)
     }
   },
   head () {
     return {
       title: '',
-      titleTemplate: `${this.product.title} - Produs`,
+      titleTemplate: `${this.products.title} - Produs`,
       meta: [
         { hid: 'description' },
         { name: 'description', content: 'Produse' },
