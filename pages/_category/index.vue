@@ -1,12 +1,11 @@
 <template>
   <div>
-    <nuxt-link :to="`/category/brand`">
-      <ListItems
-        v-for="product in products"
-        :key="product.id"
-        :title="product.title"
-      />
-    </nuxt-link>
+    <ListItems
+      v-for="categorie in categories"
+      :key="categorie.id"
+      :image="categorie.image"
+      :title="categorie.category"
+    />
   </div>
 </template>
 
@@ -19,10 +18,10 @@ export default {
     ListItems
   },
   async fetch ({ store }) {
-    await store.dispatch('loadProducts')
+    await store.dispatch('loadCategories')
   },
   computed: {
-    ...mapState(['products'])
+    ...mapState(['categories'])
   },
   head () {
     return {

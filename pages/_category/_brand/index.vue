@@ -5,6 +5,7 @@
         v-for="product in products"
         :key="product.id"
         :title="product.title"
+        :image="product.image"
       />
     </nuxt-link>
   </div>

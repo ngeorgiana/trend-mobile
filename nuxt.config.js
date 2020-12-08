@@ -58,6 +58,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content'
+    // '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
@@ -74,9 +75,8 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
-  build: {
-  },
+  build: {},
   server: {
-    port: 8000
+    port: 8080
   }
 }

@@ -5,6 +5,7 @@
       :id="product.id"
       :key="product.id"
       :title="product.title"
+      :image="product.image"
     />
   </div>
 </template>
