@@ -18,9 +18,6 @@ export default {
   components: {
     ListItem
   },
-  async fetch ({ store }) {
-    await store.dispatch('loadProducts')
-  },
   computed: {
     ...mapState(['products'])
   },

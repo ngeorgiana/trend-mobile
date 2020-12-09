@@ -13,6 +13,7 @@ export default {
   components: {
     TheHeader,
     TheFooter
-  }
+  },
+  middleware: 'load-products-and-categories'
 }
 </script>

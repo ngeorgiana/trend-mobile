@@ -17,9 +17,6 @@ export default {
   components: {
     ListItems
   },
-  async fetch ({ store }) {
-    await store.dispatch('loadCategories')
-  },
   computed: {
     ...mapState(['categories'])
   },
